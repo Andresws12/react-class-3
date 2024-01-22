@@ -36,7 +36,3 @@ As a learning and collaborative project, developers are encouraged to contribute
 
 ## License
 The project is under the MIT license.
-
----
-
-I hope this README provides a solid foundation for your project. Remember, an effective README is always evolving and should be updated as your project grows and develops. Best of luck with your project!
