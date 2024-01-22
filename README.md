@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# react-day-3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+Welcome to "react-day-2", a dynamic and modern application built with React and TypeScript, focused on consuming the Pokémon API. This application is designed to provide an interactive experience for users, allowing them to explore and discover information about their favorite Pokémon.
+
+## Technologies Used
+- **React 18.2.0**: A JavaScript library for building user interfaces.
+- **TypeScript 4.9.5**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Bulma 0.9.4**: A modern, responsive CSS framework.
+- **Prettier & Stylelint**: Tools to maintain code consistency and quality.
+
+## Installation
+To get started with the project, follow these steps:
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Use `npm start` to start the development server.
+
+## Project Structure
+- `src/`: Contains the source code of the application.
+- `public/`: Public files such as `index.html`.
+- `tests/`: Tests written using Testing Library.
+- `styles/`: CSS stylesheets and Bulma.
 
 ## Available Scripts
+- `npm start`: Starts the app in development mode.
+- `npm run build`: Builds the app for production.
+- `npm run test`: Runs unit and integration tests.
+- `npm run format`: Formats code with Prettier.
+- `npm run stylelint`: Runs Stylelint to check and fix CSS styles.
 
-In the project directory, you can run:
+## Contributing
+As a learning and collaborative project, developers are encouraged to contribute with new features, code improvements, or bug fixes. To contribute:
+1. Create a branch with a descriptive name.
+2. Develop your feature or fix.
+3. Make a pull request to integrate your changes.
 
-### `npm start`
+## License
+The project is under the MIT license.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+I hope this README provides a solid foundation for your project. Remember, an effective README is always evolving and should be updated as your project grows and develops. Best of luck with your project!
