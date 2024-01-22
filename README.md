@@ -1,38 +1,39 @@
 # react-day-3
 
 ## Project Description
-Welcome to "react-day-2", a dynamic and modern application built with React and TypeScript, focused on consuming the Pokémon API. This application is designed to provide an interactive experience for users, allowing them to explore and discover information about their favorite Pokémon.
+Welcome to "react-day-3", a vibrant and cutting-edge React application utilizing TypeScript, focused on integrating with the Pokémon API. This project offers an interactive platform for users to engage with and learn about various Pokémon.
 
 ## Technologies Used
 - **React 18.2.0**: A JavaScript library for building user interfaces.
-- **TypeScript 4.9.5**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **TypeScript 4.9.5**: A statically typed superset of JavaScript.
 - **Bulma 0.9.4**: A modern, responsive CSS framework.
-- **Prettier & Stylelint**: Tools to maintain code consistency and quality.
+- **Prettier & Stylelint**: Tools for ensuring code quality and consistency.
 
 ## Installation
-To get started with the project, follow these steps:
+To start working with the project, please follow these steps:
 1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Use `npm start` to start the development server.
+2. Run `pnpm install` to install the dependencies.
+3. Use `pnpm start` to launch the development server.
 
 ## Project Structure
-- `src/`: Contains the source code of the application.
-- `public/`: Public files such as `index.html`.
-- `tests/`: Tests written using Testing Library.
-- `styles/`: CSS stylesheets and Bulma.
+- `src/`: Contains the application's source code.
+- `public/`: Public files, including `index.html`.
+- `tests/`: Test files using Testing Library.
+- `styles/`: Style sheets for CSS and Bulma.
 
 ## Available Scripts
-- `npm start`: Starts the app in development mode.
-- `npm run build`: Builds the app for production.
-- `npm run test`: Runs unit and integration tests.
-- `npm run format`: Formats code with Prettier.
-- `npm run stylelint`: Runs Stylelint to check and fix CSS styles.
+- `pnpm start`: Initiates the app in development mode.
+- `pnpm run build`: Compiles the app for production.
+- `pnpm run test`: Executes unit and integration tests.
+- `pnpm run format`: Formats code using Prettier.
+- `pnpm run stylelint`: Runs Stylelint to check and auto-correct CSS styles.
+- `pnpm run fix:all`: Runs formatting and stylelint scripts together.
 
 ## Contributing
-As a learning and collaborative project, developers are encouraged to contribute with new features, code improvements, or bug fixes. To contribute:
-1. Create a branch with a descriptive name.
+This is a collaborative and educational project, and contributions are highly encouraged. Whether it's adding new features, enhancing the code, or fixing bugs, your input is valuable. To contribute:
+1. Create a new branch with a descriptive name.
 2. Develop your feature or fix.
-3. Make a pull request to integrate your changes.
+3. Submit a pull request to merge your changes.
 
 ## License
-The project is under the MIT license.
+This project is licensed under the MIT License.
