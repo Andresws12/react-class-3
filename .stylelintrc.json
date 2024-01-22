@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "max-nesting-depth": 2,
+    "selector-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "selector-max-type": 0
+  }
+}
