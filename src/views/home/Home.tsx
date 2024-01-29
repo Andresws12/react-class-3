@@ -1,91 +1,104 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useContext } from 'react';
 
 import Layout from '../../components/layout/Layout';
 import UserCard from '../../components/home/UserCard';
 
-interface HomeProps {
-  // Add type annotations for props
-}
+interface HomeProps {}
 
 interface PokemonData {
   name: string;
   url: string;
 }
 
+const PokemonContext = React.createContext<PokemonData[]>([]);
+
 const Home: React.FC<HomeProps> = () => {
   const [pokemonData, setPokemonData] = useState<PokemonData[]>([]);
   const [counter, setCounter] = useState<number>(10);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const sum = () => {
-    setCounter(prevCounter => prevCounter + 1);
-  };
-
-  const rest = () => {
+  const incrementCounter = () => setCounter(prevCounter => prevCounter + 1);
+  const decrementCounter = () => {
     if (counter > 0) {
       setCounter(prevCounter => prevCounter - 1);
     }
   };
+  const resetCounter = () => setCounter(10);
 
-  const reset = () => setCounter(10);
-
-  const getPokemons = useCallback(async () => {
-    setIsLoading(true); // Set loading state to true
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?offset=${counter}&limit=${counter}`
-    );
-    const pokemonResponse = await response.json();
-    setPokemonData(pokemonResponse.results);
-    setIsLoading(false); // Set loading state to false
-    return pokemonResponse.results;
+  const fetchPokemons = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon?offset=${counter}&limit=${counter}`
+      );
+      const { results } = await response.json();
+      setPokemonData(results);
+    } catch (error) {
+      console.error('Error fetching Pokemon data:', error);
+    } finally {
+      setIsLoading(false);
+    }
   }, [counter]);
 
   useEffect(() => {
-    getPokemons();
-  }, [counter, getPokemons]);
+    fetchPokemons();
+  }, [counter, fetchPokemons]);
 
   return (
     <Layout>
-      <section className="section">
-        <div className="container mb-4">
-          <h1 className="title">Counter</h1>
-          <span>Number of cards to show: {counter} </span>
-          <div>
-            <button className="button is-primary mr-1 ml-1" onClick={sum}>
-              Add
-            </button>
-            <button className="button is-warning mr-1 ml-1" onClick={reset}>
-              Reset
-            </button>
-            <button className="button is-danger mr-1 ml-1" onClick={rest}>
-              Subtract
-            </button>
-            <button
-              className="button is-danger mr-1 ml-1"
-              onClick={getPokemons}
-            >
-              Get pokemons
-            </button>
+      <PokemonContext.Provider value={pokemonData}>
+        <section className="section">
+          <div className="container mb-4">
+            <h1 className="title">Counter</h1>
+            <span>Number of cards to show: {counter} </span>
+            <div>
+              <button
+                className="button is-primary mr-1 ml-1"
+                onClick={incrementCounter}
+              >
+                Add
+              </button>
+              <button
+                className="button is-warning mr-1 ml-1"
+                onClick={resetCounter}
+              >
+                Reset
+              </button>
+              <button
+                className="button is-danger mr-1 ml-1"
+                onClick={decrementCounter}
+              >
+                Subtract
+              </button>
+              <button
+                className="button is-danger mr-1 ml-1"
+                onClick={fetchPokemons}
+              >
+                Get pokemons
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="container">
-          {isLoading ? (
-            <div className="has-text-centered">
-              <p>Loading...</p>
-            </div>
-          ) : (
-            <div className="columns is-multiline is-centered">
-              {pokemonData.slice(0, counter).map((pokemon, index) => (
-                <div className="column is-4 p-3" key={index}>
-                  <UserCard name={pokemon.name} url={pokemon.url} />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+          <div className="container">
+            {isLoading ? (
+              <div className="has-text-centered">
+                <p>Loading...</p>
+              </div>
+            ) : (
+              <div className="columns is-multiline is-centered">
+                {pokemonData.map((pokemon, index) => (
+                  <div className="column is-4 p-3" key={index}>
+                    <UserCard name={pokemon.name} url={pokemon.url} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      </PokemonContext.Provider>
     </Layout>
   );
 };
+
+const usePokemonContext = () => useContext(PokemonContext);
 
 export default Home;
